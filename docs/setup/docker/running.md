@@ -13,7 +13,7 @@ Now that you're all set up, you can start the bot!
 ## Starting the bot
 
 :::caution
-Make sure your permissions are configured correctly, as described in the [Configuring your environment](setup#permissions) section!
+Make sure your permissions are configured correctly, as described in the [Configuring your environment](setup.md#permissions) section!
 :::
 
 To start the bot for the first time, run `docker compose up` from your root folder (the one with `docker-compose.yml`). This will pull the image from Docker and start the bot "attached" to your terminal session. To stop the bot, press <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>C</kbd>, which will signal Docker to shut down the container.

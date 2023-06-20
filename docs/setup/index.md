@@ -20,4 +20,4 @@ You can also run the bot natively, either by downloading a precompiled tagged re
 
 ---------
 
-In both cases, you'll need to run some commands in your terminal. On Windows we would generally recommend running them in Powershell, though a command prompt should work fine too. Once you've decided which method to use, continue to either [Docker setup](docker/intro) or [Native setup](native/intro).
+In both cases, you'll need to run some commands in your terminal. On Windows we would generally recommend running them in Powershell, though a command prompt should work fine too. Once you've decided which method to use, continue to either [Docker setup](docker/index.md) or [Native setup](native/index.md).

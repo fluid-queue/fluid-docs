@@ -20,9 +20,11 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'fluid-queue', // Usually your GitHub org/user name.
   projectName: 'fluid-docs', // Usually your repo name.
+  deploymentBranch: 'static',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
+  trailingSlash: true,
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -92,7 +94,7 @@ const config = {
             items: [
               {
                 label: 'Tutorial',
-                to: '/docs/intro',
+                to: '/docs/setup',
               },
             ],
           },
