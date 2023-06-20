@@ -41,15 +41,16 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
+          versions: {
+            current: {
+              label: "develop"
+            }
+          },
           editUrl:
             'https://github.com/fluid-queue/fluid-docs/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/fluid-queue/fluid-docs/tree/main/packages/create-docusaurus/templates/shared/',
         },
@@ -79,6 +80,12 @@ const config = {
             label: 'Setup',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+            dropdownActiveClassDisabled: true,
+          },
           {
             href: 'https://github.com/fluid-queue/fluid-queue',
             label: 'GitHub',
@@ -128,6 +135,7 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+    
 };
 
 module.exports = config;

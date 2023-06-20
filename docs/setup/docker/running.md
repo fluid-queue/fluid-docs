@@ -36,4 +36,4 @@ $ docker compose up -d # to start the bot again!
 
 ## Next steps
 
-Now that you've got the bot running, check out the [Using fluid-queue](/docs/category/using-fluid-queue) section to learn about how to operate the bot through your chat.
+Now that you've got the bot running, check out the [Using fluid-queue](../../fluid-queue/index.md) section to learn about how to operate the bot through your chat.

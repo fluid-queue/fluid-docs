@@ -30,4 +30,4 @@ To update the bot when we release a new version:
 
 ## Next steps
 
-Now that you've got the bot running, check out the [Using fluid-queue](/docs/category/using-fluid-queue) section to learn about how to operate the bot through your chat.
+Now that you've got the bot running, check out the [Using fluid-queue](../../fluid-queue/index.md) section to learn about how to operate the bot through your chat.
