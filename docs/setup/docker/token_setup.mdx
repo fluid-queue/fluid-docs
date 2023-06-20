@@ -11,7 +11,11 @@ import Tokens from '@site/shared/tokens.md'
 
 ## Creating `tokens.json`
 
-Download the [sample tokens.json](https://raw.githubusercontent.com/fluid-queue/fluid-queue/main/settings/tokens.example.json) file from our Git repository, and save it in your `settings` folder as `tokens.json`. Replace `{INITIAL_ACCESS_TOKEN}` (including the braces) with the User Access Token, and `{INITIAL_REFRESH_TOKEN}` with the Refresh Token.
+Download the [sample tokens.json](https://raw.githubusercontent.com/fluid-queue/fluid-queue/main/settings/tokens.example.json) file from our Git repository, and save it in your `settings` folder as `tokens.json`. Replace `{INITIAL_ACCESS_TOKEN}` (including the braces) with the User Access Token, and `{INITIAL_REFRESH_TOKEN}` with the Refresh Token. Open `settings/tokens.json` in your text editor. Replace `{INITIAL_ACCESS_TOKEN}` (including the braces) with the User Access Token, and `{INITIAL_REFRESH_TOKEN}` with the Refresh Token.
+
+:::tip
+If you authorized a "broadcaster token" in the last step, copy `settings/tokens.json` to `settings/tokens.broadcaster.json` and fill the User Access Token and Refresh Token in there with the values for your broadcaster token.
+:::
 
 :::tip
 Do not include the braces; your tokens should be enclosed in quotation marks but not braces.

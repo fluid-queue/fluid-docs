@@ -1,6 +1,6 @@
-## settings.json
+## settings.yml
 
-`settings.json` is where most of the customization of the bot occurs. There's a lot of customization to do, and most of the options are safe to leave as the defaults, but there are a few to make sure you update, marked with **[!]** to make it easier to notice! Open your `settings.json` in a text editor and customize it as necessary, making sure to update all the marked items.
+`settings.yml` is where most of the customization of the bot occurs. There's a lot of customization to do, and most of the options are safe to leave as the defaults, but there are a few to make sure you update, marked with **[!]** to make it easier to notice! Open your `settings.json` in a text editor and customize it as necessary, making sure to update all the marked items.
 
 - **[!]** `channel` is the channel that the bot will run in. This should be your Twitch account username, only containing underscores and lowercase alphanumeric characters.
 - **[!]** `clientId` is the client ID you received from Twitch when you registered your application in the last section. Again, don't include the braces.
@@ -51,5 +51,9 @@
   - `customcode` for custom codes, if enabled
   - `customlevel` and `customlevel-name` for custom levels, if enabled
   - `smm1` for Super Mario Maker 1 codes
+- `extensionOptions` provides options for extensions:
+  - `ocw`
+    - `removeDashes` if set to true will remove dashes from OCW level codes for easier copying and pasting.
+- `clear` allows you to set a default argument for the `!clear` command.
 
   You can enable whichever of these you'd like in whichever order you'd like, however we recommend keeping them in the order presented in the sample file, and making sure that both resovlers are enabled for a given level type. This ensures the most accurate and responsive resolution of codes, while still giving viewers some leeway on their code format.

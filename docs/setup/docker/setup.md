@@ -10,7 +10,8 @@ You'll need to set up a folder structure for your configuration and data files. 
   - `data` (empty folder)
   - `settings`
     - `tokens.json`
-    - `settings.json`
+    - `tokens.broadcaster.json` (optionally)
+    - `settings.yml`
   - `docker-compose.yml`
 
 Make sure you create both the `data` and `settings` folders now. Most of the files mentioned will be addressed in the next sections; we'll cover `docker-compose.yml` in this section, which should be pretty simple.
@@ -23,7 +24,7 @@ First, download the [sample Compose file](https://raw.githubusercontent.com/flui
 
 Docker uses the permisions from your filesystem, which may not line up with the state inside the Docker container: the bot runs as UID 1000 in Docker, which means that UID 1000 needs to be able to access the files in your `settings` and `data` directories. The easiest way to ensure this is with a quick `chmod -R go+rw data/ settings/` from your root directory. If you run into any issues starting the bot with Docker, they're probably permission issues, and you can probably solve them by making sure everyone can write to your data and settings folders.
 
-If you're in a shared environment, you will want to be more careful with your permissions, since `tokens.js` in particular contains secrets you shouldn't let anyone else access. While there are ways to apply tighter control to the permissions, they are unfortunately out of scope for this document.
+If you're in a shared environment, you will want to be more careful with your permissions, since `tokens.json` in particular contains secrets you shouldn't let anyone else access. While there are ways to apply tighter control to the permissions, they are unfortunately out of scope for this document.
 
 ## Tags
 

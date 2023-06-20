@@ -21,4 +21,4 @@ Starting with `2.0.0-beta.4` and later releases, you will not need to run `npm i
 You will still need to run `npm install` when pulling directly from git.
 :::
 
-Next, copy or rename `tokens.example.json` and `settings.example.json` to `tokens.json` and `settings.json` within the "settings" folder, and we can start the setup process.
+Next, copy or rename `tokens.example.json` and `settings.example.json` to `tokens.json` and `settings.yml` within the "settings" folder, and we can start the setup process.

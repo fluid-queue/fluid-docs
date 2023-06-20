@@ -16,13 +16,13 @@ There are some build-in custom level types:
 
 - **Uncleared levels**
 
-  To enable uncleared levels make sure to set `uncleared_enabled` to `true` in `settings.json`.
+  To enable uncleared levels make sure to set `uncleared_enabled` to `true` in `settings.yml`.
   To add uncleared levels use:
   `!add Uncleared`, or any of the alternatives: `!add UNC-LEA-RED`, `!add an uncleared level`, `!add uncleared level`
 
 - **ROMhacks**
 
-  To enable ROMhacks make sure to set `romhacks_enabled` to `true` in `settings.json`.
+  To enable ROMhacks make sure to set `romhacks_enabled` to `true` in `settings.yml`.
   To add ROMhacks use:
   `!add ROMhack`, or any of the alternatives: `!add R0M-HAK-LVL`, `!add rom hack`
 

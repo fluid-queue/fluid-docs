@@ -10,7 +10,9 @@ It is important to note that all commands that draw a level (with exception to `
 
 - `!open` opens the queue and allows levels to be added. **[!]**
 - `!close` closes the queue and prevents levels from being added. **[!]**
-- `!clear` will remove all levels from the queue, including the current level. **[!]**
+- `!clear [duration]` will remove all levels older than the specified duration, including the current level (if applicable). **[!]**
+   - See [the timestring documentation](https://github.com/mike182uk/timestring/tree/7.0.0#keywords) for details on how to format the duration.
+- `!clear all` will remove all levels in the queue, including the current level. **[!]**
 - `!add` adds a level or maker ID to the queue, provided a level code or maker ID follows the command.
 - `!remove`/`!leave` will remove a user's submitted level or maker ID from the queue. If used by the channel owner, a name can be specified to remove another user's level or maker ID.
 - `!replace`/`!change`/`!swap` will swap a user's level code for the one following the command. Queue position is preserved when this is used.
@@ -21,6 +23,7 @@ It is important to note that all commands that draw a level (with exception to `
 -`!list`/`!queue` will show an in-order list of levels in the queue. It will display the current level as well as the next 5 levels of those currently online. It will also display how many people in the queue are offline.
 - `!position` will output the user's position in the queue, provided they have one.
 - `!submitted`/`!entry`/`!mylevel`/`!mylvl` will output the user's submitted level code, provided they have submitted a level.
+   - The broadcaster and moderators can also specify a user when using this command, e.g. `!entry [user]`, to check what level that user submitted.
 - `!weightedchance`/`!odds`/`!chance`/`!chances` will output the user's chances of getting selected in weighted random.
 - `!level` will select a level from the queue with respect to the order defined in the settings.js file. **[!]**
 - `!next` will select the next level from the queue. **[!]**
