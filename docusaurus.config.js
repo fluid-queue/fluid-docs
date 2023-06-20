@@ -100,8 +100,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/setup',
+                label: 'fluid-queue documentation',
+                to: '/docs/',
               },
             ],
           },
