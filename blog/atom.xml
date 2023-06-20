@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://fluid-queue.dev/blog</id>
+    <title>fluid-queue docs Blog</title>
+    <updated>2023-06-19T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://fluid-queue.dev/blog"/>
+    <subtitle>fluid-queue docs Blog</subtitle>
+    <icon>https://fluid-queue.dev/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[New Documentation Site!]]></title>
+        <id>https://fluid-queue.dev/blog/new-documentation-site</id>
+        <link href="https://fluid-queue.dev/blog/new-documentation-site"/>
+        <updated>2023-06-19T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Welcome to the new fluid-queue documentation site! We've switched to Docusaurus for our documentation, which should be a little better than the custom Jekyll site we were using before. This makes it easier for us to manage multiple versions of the documentation (you should see some documentation for our develop branch now), as well as integrate some other changes we're working on for the future :)]]></summary>
+        <content type="html"><![CDATA[<p>Welcome to the new fluid-queue documentation site! We've switched to <a href="https://docusaurus.io" target="_blank" rel="noopener noreferrer">Docusaurus</a> for our documentation, which should be a little better than the custom Jekyll site we were using before. This makes it easier for us to manage multiple versions of the documentation (you should see some documentation for our <code>develop</code> branch now), as well as integrate some other changes we're working on for the future :)</p>]]></content>
+        <author>
+            <name>demize</name>
+            <uri>https://github.com/demize</uri>
+        </author>
+        <category label="announcements" term="announcements"/>
+    </entry>
+</feed>
