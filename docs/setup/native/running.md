@@ -8,8 +8,8 @@ Now that you're all set up, you can start the bot!
 
 ## Starting the bot
 
-:::caution
-If you didn't run `npm install` earlier, now is a good time to do that.
+:::tip
+If you downloaded the bot from git or a source archive, remember to build it before starting it.
 :::
 
 To start the bot, run `npm run start` from your root folder (the one with `package.json`). The bot will run in your current terminal window, printing some informative messages over time.
@@ -22,11 +22,11 @@ To update the bot when we release a new version:
 
 1. Download the latest release from Github (or pull the latest changes with git).
 2. Extract the release to the same location, overwriting the existing files; we don't include any configuration files in the release, so this should only update the files you haven't set up yourself.
-   :::tip
-   Make sure you're overwriting the existing files, or your configuration won't be in the right place anymore.
-   :::
-3. Run `npm install` to update the bot's dependencies.
-4. Start the bot to make sure it works, then continue using it as usual. 
+3. Start the bot to make sure it works, then continue using it as usual.
+
+:::caution
+If you downloaded the bot from git or a source archive, you will need to run the build commands again. The bot should warn you if you're still running an old version after updating.
+:::
 
 ## Next steps
 

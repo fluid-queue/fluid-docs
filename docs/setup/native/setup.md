@@ -10,15 +10,24 @@ After extracting the release (or cloning from git), you should have a folder str
   - `settings`
     - `tokens.example.json`
     - `settings.example.json`
-  - `src`
+  - `build`
     - `index.js`
   - `package.json`
 
-The first thing you should do here is run `npm install` from the root directory (the directory with `package.json`). This will install all necessary dependencies for the bot to run, and should be run any time you update.
+If you don't have a `build` directory, then you either cloned from git or downloaded a source archive, and will need to compile the bot.
 
-:::tip
-Starting with `2.0.0-beta.4` and later releases, you will not need to run `npm install` when setting up or updating the bot from a packaged release.  
-You will still need to run `npm install` when pulling directly from git.
-:::
+<details>
+<summary>Compiling the bot</summary>
+
+To compile the bot, run the following commands:
+
+```sh
+$ npm install --include=dev
+$ npm run build
+```
+
+This will install all the development dependencies and then compile the bot. Our prepackaged releases are already compiled, so we'd recommend using them unless you have a specific reason to build the bot yourself.
+
+</details>
 
 Next, copy or rename `tokens.example.json` and `settings.example.json` to `tokens.json` and `settings.yml` within the "settings" folder, and we can start the setup process.
