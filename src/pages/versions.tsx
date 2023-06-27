@@ -76,7 +76,7 @@ export default function Version(): JSX.Element {
       <main className="container margin-vert--lg">
         <Heading as="h1">
           <Translate id="versionsPage.title">
-            Docusaurus documentation versions
+            fluid-queue documentation versions
           </Translate>
         </Heading>
 
