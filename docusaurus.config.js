@@ -37,7 +37,10 @@ const config = {
       };
     },
     loadContent() {
-      const build = exec("wasm-pack build --release", { cwd: "fluid-queue-setup/wasm"});
+      const command = "npx wasm-pack build --release";
+      const cwd = "./fluid-queue-setup/wasm";
+      console.log(`${cwd}> ${command}`);
+      const build = exec(command, { cwd: cwd});
       return new Promise((resolve, reject) => {
         build.stdout.on("data", (x) => {
           process.stdout.write(String(x));
