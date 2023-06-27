@@ -3,6 +3,8 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const { exec } = require('child_process');
+const process = require("process");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -25,6 +27,36 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   trailingSlash: true,
+  plugins: ['docusaurus-plugin-sass', () => ({
+    name: 'fluid-queue-setup',
+    configureWebpack(config, isServer, utils, content) {
+      return {
+        experiments: {
+          asyncWebAssembly: true,
+        }
+      };
+    },
+    loadContent() {
+      const build = exec("wasm-pack build --release", { cwd: "fluid-queue-setup/wasm"});
+      return new Promise((resolve, reject) => {
+        build.stdout.on("data", (x) => {
+          process.stdout.write(String(x));
+        });
+        build.stderr.on("data", (x) => {
+          process.stderr.write(String(x));
+        });
+        build.on("exit", (code, signal) => {
+          if (code == null) {
+            reject(new Error(`Build process exited with signal ${signal}`));
+          } else if (code !== 0) {
+            reject(new Error(`Build process exited with code ${code}`));
+          } else {
+            resolve(void 0);
+          }
+        });
+      });
+    }
+  })],
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -79,6 +111,7 @@ const config = {
             position: 'left',
             label: 'Setup',
           },
+          {to: '/fluid-queue-setup', label: 'Configurator', position: 'left'},
           {to: '/blog', label: 'Blog', position: 'left'},
           {
             type: 'docsVersionDropdown',

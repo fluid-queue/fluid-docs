@@ -2,6 +2,12 @@
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
+The configurator is built using Rust:
+
+- Install Rust and add the `wasm32-unknown-unknown` target like described at <https://sycamore-rs.netlify.app/docs/v0.8/getting_started/installation>.
+
+- Install `wasm-pack`: <https://rustwasm.github.io/wasm-pack/installer/>.
+
 ### Installation
 
 ```
