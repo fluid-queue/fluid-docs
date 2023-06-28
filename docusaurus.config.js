@@ -3,8 +3,8 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const { exec } = require('child_process');
-const process = require("process");
+const WasmPackPlugin = require('@wasm-tool/wasm-pack-plugin');
+const path = require('path');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -28,37 +28,25 @@ const config = {
   onBrokenMarkdownLinks: 'warn',
   trailingSlash: true,
   plugins: ['docusaurus-plugin-sass', () => ({
-    name: 'fluid-queue-setup',
-    configureWebpack(config, isServer, utils, content) {
+    name: 'fluid-queue-setup-wasm',
+
+    configureWebpack(config, isServer) {
       return {
         experiments: {
           asyncWebAssembly: true,
-        }
+        },
+        plugins: isServer ? [] : [
+          new WasmPackPlugin({
+            crateDirectory: path.resolve(__dirname, 'fluid-queue-setup', 'wasm'),
+            extraArgs: '--target=bundler',
+            watchDirectories: [
+              path.resolve(__dirname, 'fluid-queue-setup', 'core')
+            ],
+            outDir: path.resolve(__dirname, 'fluid-queue-setup-wasm', 'client'),
+          }),
+        ]
       };
     },
-    loadContent() {
-      const command = "npx wasm-pack build --release";
-      const cwd = "./fluid-queue-setup/wasm";
-      console.log(`${cwd}> ${command}`);
-      const build = exec(command, { cwd: cwd});
-      return new Promise((resolve, reject) => {
-        build.stdout.on("data", (x) => {
-          process.stdout.write(String(x));
-        });
-        build.stderr.on("data", (x) => {
-          process.stderr.write(String(x));
-        });
-        build.on("exit", (code, signal) => {
-          if (code == null) {
-            reject(new Error(`Build process exited with signal ${signal}`));
-          } else if (code !== 0) {
-            reject(new Error(`Build process exited with code ${code}`));
-          } else {
-            resolve(void 0);
-          }
-        });
-      });
-    }
   })],
 
   // Even if you don't use internalization, you can use this field to set useful

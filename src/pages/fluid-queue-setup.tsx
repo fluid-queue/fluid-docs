@@ -7,12 +7,12 @@ const BootstrapComponent = () => {
   const theme = useColorMode().colorMode;
   const [wasm, setWasm] = useState(null);
   const ref = useRef<HTMLDivElement>();
+  const bootstrapComponent = useRef<HTMLDivElement>();
+
   useEffect(() => {
+    require("bootstrap");
     const load = async () => {
-      await import("bootstrap/dist/js/bootstrap.bundle.js");
-      const wasm = await import(
-        "../../fluid-queue-setup/wasm/pkg/fluid_queue_setup_wasm.js"
-      );
+      const wasm = await import("@site/fluid-queue-setup-wasm/client/index.js");
       setWasm(wasm);
     };
     load();
@@ -23,9 +23,15 @@ const BootstrapComponent = () => {
       return () => app.free();
     }
   }, [ref, wasm]);
+  useEffect(() => {
+    if (bootstrapComponent.current != null) {
+      // for some reason the theme is not always set correctly
+      bootstrapComponent.current.dataset["bsTheme"] = theme;
+    }
+  }, [theme]);
   // TODO: implement SSR for fluid_queue_setup_wasm
   return (
-    <div className="bootstrap-component" data-bs-theme={theme}>
+    <div ref={bootstrapComponent} className="bootstrap-component" data-bs-theme={theme}>
       <div ref={ref} className="col-lg-6 mx-auto p-4 py-md-5"></div>
     </div>
   );

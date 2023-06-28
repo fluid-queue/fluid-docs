@@ -4,6 +4,9 @@
 # Production
 /build
 
+# fluid-queue-setup-wasm build folder
+/fluid-queue-setup-wasm
+
 # Generated files
 .docusaurus
 .cache-loader
