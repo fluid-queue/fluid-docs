@@ -1,0 +1,3 @@
+[submodule "fluid-queue-setup"]
+	path = fluid-queue-setup
+	url = https://github.com/fluid-queue/fluid-queue-setup.git

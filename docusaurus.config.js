@@ -3,6 +3,8 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const WasmPackPlugin = require('@wasm-tool/wasm-pack-plugin');
+const path = require('path');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -25,6 +27,27 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   trailingSlash: true,
+  plugins: ['docusaurus-plugin-sass', () => ({
+    name: 'fluid-queue-setup-wasm',
+
+    configureWebpack(config, isServer) {
+      return {
+        experiments: {
+          asyncWebAssembly: true,
+        },
+        plugins: isServer ? [] : [
+          new WasmPackPlugin({
+            crateDirectory: path.resolve(__dirname, 'fluid-queue-setup', 'wasm'),
+            extraArgs: '--target=bundler',
+            watchDirectories: [
+              path.resolve(__dirname, 'fluid-queue-setup', 'core')
+            ],
+            outDir: path.resolve(__dirname, 'fluid-queue-setup-wasm', 'client'),
+          }),
+        ]
+      };
+    },
+  })],
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -79,6 +102,7 @@ const config = {
             position: 'left',
             label: 'Setup',
           },
+          {to: '/fluid-queue-setup', label: 'Configurator', position: 'left'},
           {to: '/blog', label: 'Blog', position: 'left'},
           {
             type: 'docsVersionDropdown',
