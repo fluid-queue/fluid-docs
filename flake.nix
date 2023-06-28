@@ -18,6 +18,7 @@
         pkgs.mkShell {
           buildInputs = with pkgs; [
             cargo
+            wasm-pack
             (rust-bin.stable.latest.default.override {
               extensions = [ "rust-src" ];
               targets = [ "wasm32-unknown-unknown" ];
