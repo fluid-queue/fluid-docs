@@ -46,6 +46,9 @@ const config = {
               label: "develop"
             }
           },
+          exclude: [
+            "**/shared/**"
+          ],
           editUrl:
             'https://github.com/fluid-queue/fluid-docs/tree/main/packages/create-docusaurus/templates/shared/',
         },
