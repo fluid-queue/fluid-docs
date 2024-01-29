@@ -22,6 +22,10 @@ Once configured through `settings/channel-points.yml`, the reward will be fully 
 Don't create the reward yourself, or the bot will be unable to start! Configure the reward, and let the bot create it.
 :::
 
+:::tip
+Twitch will only let the bot manage rewards owned by its client ID. This means that, if you set up a channel point reward and then change the client ID the bot uses, you'll need to delete the reward on Twitch. This is only likely to be an issue in certain situations, but keep it in mind if you're planning on switching to the new Device Code Grant Flow (coming in a future release).
+:::
+
 First, create your `settings/channel-points.yml` file. You may be able to copy the existing `channel-points.example.yml` file, if you set up the bot from a packaged release.
 
 <details>
