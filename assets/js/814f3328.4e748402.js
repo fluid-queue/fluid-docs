@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkfluid_docs||=[]).push([[7472],{5513(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"New Documentation Site!","permalink":"/blog/new-documentation-site","unlisted":false,"date":"2023-06-19T00:00:00.000Z"}]}')}}]);
