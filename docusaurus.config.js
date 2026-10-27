@@ -22,9 +22,12 @@ const config = {
   organizationName: 'fluid-queue', // Usually your GitHub org/user name.
   projectName: 'fluid-docs', // Usually your repo name.
   deploymentBranch: 'static',
-
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  markdown : {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
   trailingSlash: true,
 
   // Even if you don't use internalization, you can use this field to set useful
